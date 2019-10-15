@@ -14,6 +14,17 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
+- task: PackerBuild@1
+  inputs:
+    templateType: 'builtin'
+    ConnectedServiceName: 'rs-az-msft(8905234f-18fc-4cd8-b132-04d22f4ecb2e)'
+    isManagedImage: true
+    managedImageName: 'aziac-demoimage'
+    location: 'westus2'
+    storageAccountName: 'rsazawus2sa'
+    azureResourceGroup: 'demo1'
+    baseImageSource: 'default'
+    baseImage: 'OpenLogic:CentOS:7.2:linux'
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
